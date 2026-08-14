@@ -45,6 +45,12 @@ export const pushLead = internalAction({
     if (card.email) fields.email = card.email;
     if (card.company) fields.company = card.company;
     if (card.website) fields.website = card.website;
+    const addrStr = card.addresses?.map((a) => a.value).filter(Boolean).join(", ");
+    if (addrStr) fields.address = addrStr;
+    if (card.gstin) fields.gstin = card.gstin;
+    const servicesStr = card.services?.filter(Boolean).join(", ");
+    if (servicesStr) fields.services = servicesStr;
+    if (card.tagline) fields.tagline = card.tagline;
 
     const assigneeName = process.env.TELECRM_ASSIGNEE ?? "Komal";
     const assigneeEmail = process.env.TELECRM_ASSIGNEE_EMAIL ?? "sales8@kanuniversal.com";

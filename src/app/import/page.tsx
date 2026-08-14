@@ -182,7 +182,7 @@ export default function ImportPage() {
 
       <main className="max-w-2xl mx-auto px-4 py-8 space-y-5 sm:px-6">
 
-        {/* Upload */}
+        {/* Upload */}w
         {status === "idle" && (
           <FileUpload
             onChange={(files) => handleFile(files[0])}
